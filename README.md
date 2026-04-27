@@ -1,25 +1,53 @@
 # FlowScreen
 
-FlowScreen is the reactive-signage starter in the Living Interfaces suite.
+FlowScreen is a standalone prototype for reactive digital signage and display behavior.
 
-## MVP
+## What It Is
 
-- Upload or simulate a screen asset
-- Preview reaction modes for touch-like interactions
-- Explore display layouts without hardware setup
-- Keep the first version browser-first
+FlowScreen explores how screens can feel more alive in physical environments:
 
-## Run
+- mode-based display behavior
+- venue-specific scene presets
+- signage control concepts
+- browser-first interaction preview
+
+## Current Features
+
+- switch between signage behavior modes
+- preview multiple venue scenes
+- toggle playback intent
+- inspect how tone changes by environment
+
+## Stack
+
+- Next.js
+- React
+- TypeScript
+- pnpm
+
+## Run Locally
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open `http://localhost:3000`.
 
+## Deployment
+
+Recommended first deployment target:
+
+- Vercel
+
+Suggested environment:
+
+- standalone project
+- one deployment per repo
+- production branch: `main`
+
 ## Next Steps
 
-- Add real media upload and playback
-- Add fullscreen playback mode
-- Add scheduling and screen management later
+- add real media upload and asset management
+- add fullscreen presentation mode
+- add scheduling and screen operations later
