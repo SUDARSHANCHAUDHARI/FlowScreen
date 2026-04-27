@@ -1,25 +1,23 @@
+import type { DisplayMode } from "../lib/starter-data";
+
 type DisplayModePickerProps = {
   activeMode: string;
+  modes: DisplayMode[];
   onSelect: (id: string) => void;
 };
 
-const options = [
-  { id: "ripple", label: "Ripple" },
-  { id: "glow", label: "Glow" },
-  { id: "pulse", label: "Pulse" }
-];
-
-export function DisplayModePicker({ activeMode, onSelect }: DisplayModePickerProps) {
+export function DisplayModePicker({ activeMode, modes, onSelect }: DisplayModePickerProps) {
   return (
     <section className="modes">
-      {options.map((option) => (
+      {modes.map((option) => (
         <button
           key={option.id}
           type="button"
           className={option.id === activeMode ? "active" : ""}
           onClick={() => onSelect(option.id)}
         >
-          {option.label}
+          <span>{option.name}</span>
+          <small>{option.tempo}</small>
         </button>
       ))}
     </section>
