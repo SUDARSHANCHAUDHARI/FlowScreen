@@ -1,29 +1,33 @@
 # FlowScreen
 
-FlowScreen is a standalone prototype for reactive digital signage and display behavior.
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](package.json)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB.svg)](https://react.dev/)
+[![Release](https://img.shields.io/badge/release-public%20demo-orange.svg)](RELEASE_MEMORY.md)
 
-## What It Is
+Reactive digital signage prototype for exploring mode-based screen behavior, venue scenes, and browser-first display previews.
 
-FlowScreen explores how screens can feel more alive in physical environments:
+> **Status:** Public demo-ready · static build verified · real production needs media upload, scheduling, and screen operations
 
-- mode-based display behavior
-- venue-specific scene presets
-- signage control concepts
-- browser-first interaction preview
+## Why This Exists
 
-## Current Features
+Digital signage often feels static. FlowScreen explores how screens could respond to environment, mode, and playback intent before building the heavier media-management backend.
 
-- switch between signage behavior modes
-- preview multiple venue scenes
-- toggle playback intent
-- inspect how tone changes by environment
+## Key Technical Decisions
 
-## Stack
+**Static Next.js output is enough for the first demo.** The current app is an interaction prototype, so it can ship without API routes or persistence.
 
-- Next.js
-- React
-- TypeScript
-- pnpm
+**Modes and scenes model the product direction.** They communicate signage behavior without requiring real screen hardware.
+
+**Cloudflare Pages is the first deployment target.** The repo already has static output, `_headers`, `.nvmrc`, and ignored `out/`.
+
+## Features
+
+- signage behavior mode picker
+- venue scene preview
+- playback intent toggle
+- responsive browser preview
+- Cloudflare Pages demo setup
 
 ## Run Locally
 
@@ -36,18 +40,27 @@ Open `http://localhost:3000`.
 
 ## Deployment
 
-Recommended first deployment target:
+| Setting | Value |
+|---|---|
+| Release scope | Public demo |
+| Framework preset | `Next.js` |
+| Build command | `pnpm build` |
+| Build output directory | `out` |
+| Node version | `20.19.6` |
 
-- Vercel
+## Verification
 
-Suggested environment:
+```bash
+pnpm build
+pnpm exec tsc --noEmit
+```
 
-- standalone project
-- one deployment per repo
-- production branch: `main`
+## Known Limits
 
-## Next Steps
+- No real media upload yet.
+- No scheduling or screen fleet operations yet.
+- No persistence or production device integration yet.
 
-- add real media upload and asset management
-- add fullscreen presentation mode
-- add scheduling and screen operations later
+## Author
+
+Built by **Sudarshan Chaudhari** — SudarshanTechLabs.
