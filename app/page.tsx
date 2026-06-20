@@ -5,6 +5,7 @@ import { DisplayModePicker } from "../components/DisplayModePicker";
 import { ScenePicker } from "../components/ScenePicker";
 import { ScreenPreview } from "../components/ScreenPreview";
 import { displayModes, screenScenes } from "../lib/starter-data";
+import { selectById } from "../lib/selectById";
 
 export default function HomePage() {
   const [activeMode, setActiveMode] = useState(displayModes[0].id);
@@ -12,12 +13,12 @@ export default function HomePage() {
   const [autoplay, setAutoplay] = useState(true);
 
   const selectedMode = useMemo(
-    () => displayModes.find((mode) => mode.id === activeMode) ?? displayModes[0],
+    () => selectById(displayModes, activeMode, displayModes[0]),
     [activeMode]
   );
 
   const selectedScene = useMemo(
-    () => screenScenes.find((scene) => scene.id === activeScene) ?? screenScenes[0],
+    () => selectById(screenScenes, activeScene, screenScenes[0]),
     [activeScene]
   );
 
