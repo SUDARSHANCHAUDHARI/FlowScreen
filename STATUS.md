@@ -71,3 +71,34 @@ Not yet deployed. Self-hosted on your own domain when ready.
 - [ ] Multi-screen support (assumes one screen)
 - [ ] Persistence (no settings storage)
 - [ ] Product spec answering: retail / corporate / hospitality? Which signage CMS targets?
+
+## Categorized work remaining
+
+| Item | Effort | Bucket | Blocker | Priority |
+|------|--------|--------|---------|----------|
+| Deploy as a prototype demo | ~30m | 🔑 Needs hosting | hosting access; no env vars | P2 |
+| Real screen sync | weeks | 🎯 Needs spec | which display protocol? HDMI matrix? Browser-as-player? Existing CMS API? | P1 |
+| Media library | 1–2d | 🎯 Needs spec then 🟦 Pure code | what gets stored? Where (S3 / local)? | P2 |
+| Schedule editor | 2–3d | 🎯 Needs spec then 🟦 Pure code | cron-style? Event-driven (sensors, weather)? | P2 |
+| Multi-screen support | 1–2d | 🎯 Needs spec then 🟦 Pure code | how do screens coordinate? Central API? | P2 |
+| Persistence | half day | 🟦 Pure code | depends on hosting (DB / KV / file) | P3 |
+
+## Product spec questions (answer one sentence each)
+
+1. **What is FlowScreen for?** Retail signage? Office lobbies? Conference rooms? Restaurants?
+2. **How does it talk to the actual screen?** Browser running on the screen? Native app? HDMI player? Existing CMS API (BrightSign, Yodeck, etc.)?
+3. **Single screen or many?** One screen per install, or fleet management?
+4. **What triggers a scene switch?** Manual, scheduled (cron), or event-driven (sensor / external signal)?
+5. **Who's the user?** End venue manager, or your internal customer success team?
+
+## Release plan
+
+**Current state = prototype demo.** Release plan once spec'd:
+
+1. Tag current state as `v0.1.0 — UI prototype, hardcoded scenes`.
+2. Add media library + basic schedule → `v0.2.0`.
+3. Add real display sync → `v0.3.0`.
+4. Add multi-screen + persistence → `v1.0.0`.
+
+### Deploy prerequisites (for the prototype demo)
+**None.** Zero env vars. Just your hosting.
