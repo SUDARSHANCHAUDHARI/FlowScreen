@@ -39,3 +39,35 @@ This is a **prototype, not a product.** Real product would need:
 ## Deployment
 
 Not yet deployed. Self-hosted on your own domain when ready.
+
+## File-by-file checklist
+
+### App shell
+- [x] `app/layout.tsx` — root layout
+- [x] `app/page.tsx` — picker UI (uses extracted `selectById` helper)
+- [x] `app/globals.css` — base styles
+
+### Components
+- [x] `components/DisplayModePicker.tsx` — mode chips
+- [x] `components/ScenePicker.tsx` — scene tiles
+- [x] `components/ScreenPreview.tsx` — composed preview
+
+### Lib
+- [x] `lib/starter-data.ts` — 3 display modes + 5 scenes (typed)
+- [x] `lib/selectById.ts` — pure find-by-id helper (extracted)
+
+### Tests
+- [x] `lib/selectById.test.ts` — 6 tests (5 selectById + 1 starter-data uniqueness guard)
+
+### Quality + scaffolding
+- [x] ESLint configured (0 errors, 0 warnings)
+- [x] `typecheck` + `test` scripts
+- [x] Build + lint + typecheck green
+
+### Not done (product gaps — need spec)
+- [ ] Real screen sync (no hardware integration, no display protocol)
+- [ ] Media library (scenes are hardcoded in `lib/starter-data.ts`)
+- [ ] Schedule editor (no time-of-day or event-driven scene switching)
+- [ ] Multi-screen support (assumes one screen)
+- [ ] Persistence (no settings storage)
+- [ ] Product spec answering: retail / corporate / hospitality? Which signage CMS targets?
